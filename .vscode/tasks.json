@@ -9,7 +9,7 @@
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\a.exe"
 			],
 			"options": {
 				"cwd": "C:\\msys64\\mingw64\\bin"
@@ -25,3 +25,5 @@
 		}
 	]
 }
+
+/*${fileDirname}\\${fileBasenameNoExtension}*/
