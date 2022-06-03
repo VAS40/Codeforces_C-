@@ -5,20 +5,28 @@
 #include<set>
 #include<algorithm>
 
-#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
 typedef long long ll;
 using namespace std;
 
 void solve(){
-    
+    ll a,b;
+    cin>>a>>b;
+    ll x,y,z;
+    x = max(a,b);
+    y = min(a,b);
+    z = x-y;
+    if(z>=y){
+        cout<<y<<endl;
+    }else{
+        a = y-z;
+        cout<<z+ 2*(a/3) + (a%3>1?1:0)<<endl;
+    }
 }
 
 int main(){
-    IOS;
     int t;
     // t = 1;
-    // cin>>t;
+    cin>>t;
     while(t--){
         solve();
     }
