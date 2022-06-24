@@ -4,12 +4,21 @@
 #include<map>
 #include<set>
 #include<algorithm>
-#include<math.h>
 
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 typedef long long ll;
 using namespace std;
+
+struct node
+{
+    node &left;
+    node &right;
+    node &up;
+    node &down;
+    int x,y;
+};
+
 
 void solve(){
     
@@ -18,7 +27,7 @@ void solve(){
 int main(){
     IOS;
     int t;
-    // t = 1;
+    t = 1;
     // cin>>t;
     while(t--){
         solve();
