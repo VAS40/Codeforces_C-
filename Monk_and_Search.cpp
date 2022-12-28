@@ -11,25 +11,18 @@
 typedef long long ll;
 using namespace std;
 
-int josephusSurvivor(int n, int k) {
-  std::vector<int> arr(n,0);
-  int count = 0;
-  int i=(k-1)%n;
-  while(count<n-1){
-    if(arr[i]==1) arr[i]=1;
-    else count++;
-    arr[i]=1;
-    i = (i+k)%n;
-  }
-  int ans = -1;
-  for(int i=0;i<n;i++){
-    if(arr[i]==0) {ans = i+1;break;}
-  }
-  return ans;
-}
-
 void solve(){
-    cout<<josephusSurvivor(7,3);
+    int n;cin>>n;
+    vector<int> arr(n+1);
+    for(int i=1;i<=n;i++) cin>>arr[i];
+    sort(arr.begin(),arr.end());
+    int q;cin>>q;
+    int b,x;
+    while(q--){
+        cin>>b>>x;
+        int m = (b?upper_bound(arr.begin(),arr.end(),x)-arr.begin():lower_bound(arr.begin(),arr.end(),x)-arr.begin());
+        cout<<max(0,n-m+1)<<endl;
+    }
 }
 
 int main(){

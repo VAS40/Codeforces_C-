@@ -11,25 +11,19 @@
 typedef long long ll;
 using namespace std;
 
-int josephusSurvivor(int n, int k) {
-  std::vector<int> arr(n,0);
-  int count = 0;
-  int i=(k-1)%n;
-  while(count<n-1){
-    if(arr[i]==1) arr[i]=1;
-    else count++;
-    arr[i]=1;
-    i = (i+k)%n;
-  }
-  int ans = -1;
-  for(int i=0;i<n;i++){
-    if(arr[i]==0) {ans = i+1;break;}
-  }
-  return ans;
+
+bool canJump(vector<int>& nums) {
+    int n = nums.size();
+    int last = n-1;
+    for(int i=n-2;i>=0;i--){
+        if(i+nums[i]>=last) last = i;
+    }
+    return last<=0;
 }
 
 void solve(){
-    cout<<josephusSurvivor(7,3);
+    vector<int> arr = {34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,0};
+    cout<<(canJump(arr)?"True":"False")<<endl;
 }
 
 int main(){
